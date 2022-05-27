@@ -1,0 +1,37 @@
+@import '../../sass/variables.scss';
+@import '../../sass/forms.scss';
+
+.header {
+    margin: 0 auto 70px;
+    display: flex;
+
+    &__title {
+        margin-right: 30px;
+        font-size: 50px;
+        font-family: $primary-text;
+        font-weight: 700;
+    }
+
+    &__input {
+        width: 150px;
+    }
+
+    &__date {
+        padding: 5px 10px;
+        margin-top: auto;
+        border-radius: 5px;
+        border: 2px $color-secondary solid;
+        background-color: darken($color-bc, 30%);
+        font-family: $secondary-text;
+        color: $color-text;
+
+        input {
+            color: $color-text;
+            font-weight: 700;
+
+            &::placeholder {
+                color: inherit;
+            }
+        }
+    }
+}
