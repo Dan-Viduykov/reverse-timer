@@ -3,6 +3,7 @@
 .timer {
     width: 60%;
     padding: 50px;
+    height: 200px;
     margin: auto;
     background-color: $color-secondary;
     border-radius: 20px;
@@ -11,6 +12,7 @@
     box-shadow: 0px 7px 15px 6px rgba(34, 60, 80, 0.8) inset;
     display: flex;
     justify-content: space-around;
+    position: relative;
     
     &__unit {
         padding: 25px 30px;
@@ -26,5 +28,65 @@
         font-weight: 400;
         font-size: 40px;
         color: #000;
+    }
+}
+
+.completed-message {
+    color: $color-text;
+    font-family: $primary-text;
+    font-size: 60px;
+    position: absolute;
+    top: 20px;
+
+    span {
+        position: relative;
+        top: 19px;
+        display: inline-block;
+        -webkit-animation: bounce .4s 4  alternate;
+        animation: bounce .4s ease 4 alternate;
+        font-family: $primary-text;
+        font-size: 93px;
+        line-height: 125px;
+        text-shadow: 
+            0 1px 0 darken($color-text, 10%),
+            0 2px 0 darken($color-text, 12%),
+            0 3px 0 darken($color-text, 14%),
+            0 4px 0 darken($color-text, 16%),
+            0 5px 0 darken($color-text, 18%),
+            0 6px 0 transparent,
+            0 7px 0 transparent,
+            0 8px 0 transparent,
+            0 9px 0 transparent,
+            0 10px 0 transparent,
+            0 11px 0 transparent,
+            0 12px 0 transparent,
+            0 13px 0 transparent,
+            0 14px 0 transparent,
+            0 15px 0 transparent,
+            0 10px 10px rgba($color-text, 0.42);
+    }
+
+    & span:nth-child(2) { -webkit-animation-delay: .1s; animation-delay: .1s; }
+    & span:nth-child(3) { -webkit-animation-delay: .2s; animation-delay: .2s; }
+    & span:nth-child(4) { -webkit-animation-delay: .3s; animation-delay: .3s; }
+    & span:nth-child(5) { -webkit-animation-delay: .4s; animation-delay: .4s; }
+    & span:nth-child(6) { -webkit-animation-delay: .5s; animation-delay: .5s; }
+    & span:nth-child(7) { -webkit-animation-delay: .6s; animation-delay: .6s; }
+    & span:nth-child(8) { -webkit-animation-delay: .7s; animation-delay: .7s; }
+    & span:nth-child(9) { -webkit-animation-delay: .8s; animation-delay: .8s; }
+    & span:nth-child(10) { -webkit-animation-delay: .9s; animation-delay: .9s; }
+
+    @-webkit-keyframes bounce {
+        100% {
+            top: -20px;
+            text-shadow: 0 50px 25px rgba(19, 18, 18, 0.23);
+        }
+    }
+      
+    @keyframes bounce {
+        100% {
+            top: -20px;
+            text-shadow: 0 50px 25px rgba(19, 18, 18, 0.23);
+        }
     }
 }

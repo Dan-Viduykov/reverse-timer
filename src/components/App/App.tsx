@@ -5,7 +5,7 @@ import './App.scss'
 
 
 const App: FC = () => {
-    const [ date, setDate ] = useState(new Date('01 01 2023 00:00:00'))
+    const [ date, setDate ] = useState(new Date('05 27 2022 20:39:00'))
     const [ gap, setGap ] = useState(date.getTime() - new Date().getTime())
 
     useEffect(() => {
