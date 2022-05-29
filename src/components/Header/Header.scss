@@ -4,21 +4,26 @@
 .header {
     margin: 0 auto 70px;
     display: flex;
+    justify-content: center;
+    align-items: center;
 
     &__title {
+        margin-bottom: 0;
         margin-right: 30px;
         font-size: 50px;
         font-family: $primary-text;
         font-weight: 700;
     }
 
-    &__input {
-        width: 150px;
+    &__date-time {
+        display: flex;
+        flex-direction: column;
     }
 
     &__date {
+        width: 150px;
         padding: 5px 10px;
-        margin-top: auto;
+        margin-bottom: 10px;
         border-radius: 5px;
         border: 2px $color-secondary solid;
         background-color: darken($color-bc, 30%);
@@ -33,5 +38,23 @@
                 color: inherit;
             }
         }
+    }
+
+    &__time {
+        width: 150px;
+        padding: 4px 10px;
+        margin-top: auto;
+        border-radius: 5px;
+        border: 2px $color-secondary solid;
+        background-color: darken($color-bc, 30%);
+        font-family: $secondary-text;
+        color: $color-text;
+        font-weight: 700;
+    }
+
+    &__button-submit {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
     }
 }
