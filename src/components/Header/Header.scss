@@ -7,17 +7,35 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: 720px) {
+        flex-direction: column-reverse;
+        margin-left: 10px;
+    }
+
     &__title {
         margin-bottom: 0;
         margin-right: 30px;
         font-size: 50px;
         font-family: $primary-text;
         font-weight: 700;
+        word-spacing: 10px;
+
+        @media (max-width: 720px) {
+            font-size: 60px;
+            margin: 0;
+            text-align: center;
+            word-spacing: 20px;
+        }
     }
 
     &__date-time {
         display: flex;
         flex-direction: column;
+        
+        @media (max-width: 720px) {
+            align-items: center;
+            width: 100%;
+        }
     }
 
     &__date {
@@ -38,6 +56,10 @@
                 color: inherit;
             }
         }
+
+        @media (max-width: 720px) {
+            width: 80%
+        }
     }
 
     &__time {
@@ -50,6 +72,10 @@
         font-family: $secondary-text;
         color: $color-text;
         font-weight: 700;
+
+        @media (max-width: 720px) {
+            width: 80%
+        }
     }
 
     &__button-submit {

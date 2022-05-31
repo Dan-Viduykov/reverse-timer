@@ -1,7 +1,7 @@
 @import '../../sass/variables.scss';
 
 .timer {
-    width: 60%;
+    width: 100%;
     padding: 50px;
     height: 200px;
     margin: auto;
@@ -13,6 +13,13 @@
     display: flex;
     justify-content: space-around;
     position: relative;
+
+    @media (max-width: 720px) {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        max-width: 250px;
+    }
     
     &__unit {
         padding: 25px 30px;
@@ -28,6 +35,31 @@
         font-weight: 400;
         font-size: 40px;
         color: #000;
+        position: relative;
+
+        @media (max-width: 720px) {
+            min-width: 80px;
+            width: 100%;
+            max-width: 120px;
+            padding: 10px 0;
+            margin: 20px 0;
+        }
+
+        &::after {
+            position: absolute;
+            
+            top: -30px;
+            font-size: 20px;
+            font-weight: 400;
+            font-family: $secondary-text;
+            color: $color-text;
+
+        }
+
+        &:nth-child(1)::after { content: 'days'; }
+        &:nth-child(2)::after { content: 'hours'; }
+        &:nth-child(3)::after { content: 'minutes'; }
+        &:nth-child(4)::after { content: 'seconds'; }
     }
 }
 

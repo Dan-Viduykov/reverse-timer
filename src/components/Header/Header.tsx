@@ -15,7 +15,6 @@ const Header: FC<HeaderProps> = ({ setDate }) => {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-
         const date = `${valueDate} ${valueTime.current?.value}`;
         setDate(date);
     }
