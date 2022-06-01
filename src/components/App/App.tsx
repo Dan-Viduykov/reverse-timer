@@ -5,23 +5,22 @@ import './App.scss'
 
 
 const App: FC = () => {
-    const [ date, setDate ] = useState(new Date('05 27 2022 20:39:00'))
-    const [ gap, setGap ] = useState(date.getTime() - new Date().getTime())
-
+    const [ date, setDate] = useState(new Date());
+    const [ gap, setGap ] = useState(0);
+    
     useEffect(() => {
         setTimeout(() => {
             setGap(date.getTime() - new Date().getTime());
         }, 1000);
+        console.log(gap);
     }, [gap])
 
-    const onChange = (value: string) => {
-        setDate(new Date(value))
-    }
+    const onChangeDate = (date: Date) => setDate(date);
 
     return (
         <div className="main">
             <div className="wrap">
-                <Header setDate={onChange} />
+                <Header setDate={onChangeDate} />
                 <Timer gap={gap}/>
             </div>
         </div>

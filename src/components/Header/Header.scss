@@ -40,13 +40,7 @@
 
     &__date {
         width: 150px;
-        padding: 5px 10px;
         margin-bottom: 10px;
-        border-radius: 5px;
-        border: 2px $color-secondary solid;
-        background-color: darken($color-bc, 30%);
-        font-family: $secondary-text;
-        color: $color-text;
 
         input {
             color: $color-text;
@@ -64,23 +58,32 @@
 
     &__time {
         width: 150px;
-        padding: 4px 10px;
-        margin-top: auto;
-        border-radius: 5px;
-        border: 2px $color-secondary solid;
-        background-color: darken($color-bc, 30%);
-        font-family: $secondary-text;
-        color: $color-text;
-        font-weight: 700;
+        margin-bottom: 10px;
+        box-sizing: border-box;
 
         @media (max-width: 720px) {
             width: 80%
         }
+
+        &:hover {
+            border-color: #40a9ff;
+        }
     }
 
     &__button-submit {
-        display: none;
-        opacity: 0;
-        visibility: hidden;
+        width: 150px;
+        margin-bottom: 10px;
+
+        @media (max-width: 720px) {
+            width: 80%;
+        }
+
+        &:hover {
+            transform: scale(1.07)
+        }
+
+        &:active {
+            transform: scale(1)
+        }
     }
 }

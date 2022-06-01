@@ -1,37 +1,37 @@
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { DatePicker } from "antd";
 import "antd/dist/antd.css";
 import './Header.scss'
 
 interface HeaderProps {
-    setDate: (value: string) => void;
+    setDate: (date: Date) => void;
 }
 
 const Header: FC<HeaderProps> = ({ setDate }) => {
-    const [ valueDate, setValueDate ] = useState<string>(`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`)
-    const valueTime = useRef<HTMLInputElement | null>(null)
+    const currentDate = new Date()
+    
+    const [ time, setTime ] = useState('00:00');
+    const [ valueDate, setValueDate ] = useState(`${currentDate.getDate()} ${currentDate.getMonth()} ${currentDate.getFullYear()}`);
 
-    const onChange = (value: any, stringValue: string) => setValueDate(stringValue)
+    const onChangeDate = (value: any, stringValue: string) => setValueDate(stringValue);
+    const onChangeTime = (event: React.ChangeEvent<HTMLInputElement>) => setTime(event.target.value);
 
     const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        const date = `${valueDate} ${valueTime.current?.value}`;
-        setDate(date);
+        event.preventDefault()
+        setDate(new Date(`${time} ${valueDate}`));
     }
 
     return (
         <header className="header">
             <h1 className="header__title">until the date left</h1>
-            <form 
-                className="header__date-time"
-                onSubmit={handleSubmit} >
-                <DatePicker className="header__date" onChange={onChange} />
+            <form className="header__date-time" onSubmit={handleSubmit} >
+                <DatePicker className="header__date input" onChange={onChangeDate} />
                 <input
-                    className="header__time"
+                    className="header__time input"
                     type="time"
-                    ref={valueTime}
-                    defaultValue={'00:00'} />
-                <button className="header__button-submit" type="submit"></button>
+                    value={time}
+                    onChange={onChangeTime}/>
+                <button className="header__button-submit input" type="submit">Choose</button>
             </form>
         </header>
     )
