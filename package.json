@@ -2,6 +2,7 @@
   "name": "reverse-timer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dan-viduykov.github.io/reverse-timer",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
@@ -11,7 +12,9 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "antd": "^4.20.6",
+    "gh-pages": "^4.0.0",
     "node-sass": "^4.14.1",
+    "package-name": "^0.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
